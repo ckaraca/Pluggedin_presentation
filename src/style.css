@@ -1,0 +1,281 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700&display=swap');
+
+.App {
+  font-family: 'Orbitron', sans-serif;
+  background: #0a0a0f;
+}
+
+body {
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  background: #0a0a0f;
+  color: #78dce8;
+}
+
+/* Neon node styles */
+.rete-node {
+  background: rgba(10, 10, 15, 0.95) !important;
+  border: 2px solid rgba(120, 220, 232, 0.3) !important;
+  border-radius: 12px !important;
+  box-shadow:
+    0 0 20px rgba(120, 220, 232, 0.3),
+    0 0 40px rgba(120, 220, 232, 0.1),
+    inset 0 0 20px rgba(120, 220, 232, 0.05) !important;
+  transition: all 0.3s ease !important;
+}
+
+.rete-node:hover {
+  box-shadow:
+    0 0 30px rgba(120, 220, 232, 0.5),
+    0 0 60px rgba(120, 220, 232, 0.2),
+    inset 0 0 30px rgba(120, 220, 232, 0.1) !important;
+  border-color: rgba(120, 220, 232, 0.6) !important;
+}
+
+/* Node title styles */
+.rete-node-title {
+  background: linear-gradient(180deg, rgba(120, 220, 232, 0.1), rgba(120, 220, 232, 0.05)) !important;
+  border-bottom: 1px solid rgba(120, 220, 232, 0.2) !important;
+  color: #78dce8 !important;
+  font-weight: 600 !important;
+  text-shadow: 0 0 10px rgba(120, 220, 232, 0.5) !important;
+  font-family: 'Orbitron', sans-serif !important;
+  letter-spacing: 1px !important;
+}
+
+/* MCP Tool nodes - Purple/Cyan */
+.rete-node:has(.rete-node-title:contains("MCP Tool")) {
+  border-color: rgba(168, 85, 247, 0.4) !important;
+  box-shadow:
+    0 0 20px rgba(168, 85, 247, 0.3),
+    0 0 40px rgba(120, 220, 232, 0.1),
+    inset 0 0 20px rgba(168, 85, 247, 0.05) !important;
+}
+
+/* Knowledge RAG nodes - Amber */
+.rete-node:has(.rete-node-title:contains("Knowledge")) {
+  border-color: rgba(245, 158, 11, 0.4) !important;
+  box-shadow:
+    0 0 20px rgba(245, 158, 11, 0.3),
+    0 0 40px rgba(245, 158, 11, 0.1),
+    inset 0 0 20px rgba(245, 158, 11, 0.05) !important;
+}
+
+/* Memory nodes - Teal/Green */
+.rete-node:has(.rete-node-title:contains("Memory")) {
+  border-color: rgba(20, 184, 166, 0.4) !important;
+  box-shadow:
+    0 0 20px rgba(20, 184, 166, 0.3),
+    0 0 40px rgba(20, 184, 166, 0.1),
+    inset 0 0 20px rgba(20, 184, 166, 0.05) !important;
+}
+
+/* Model nodes - Blue */
+.rete-node:has(.rete-node-title:contains("Model")) {
+  border-color: rgba(59, 130, 246, 0.4) !important;
+  box-shadow:
+    0 0 20px rgba(59, 130, 246, 0.3),
+    0 0 40px rgba(59, 130, 246, 0.1),
+    inset 0 0 20px rgba(59, 130, 246, 0.05) !important;
+}
+
+/* AI Agent node - White/Cyan (brightest) */
+.rete-node:has(.rete-node-title:contains("AI Agent")) {
+  border-color: rgba(255, 255, 255, 0.6) !important;
+  box-shadow:
+    0 0 30px rgba(120, 220, 232, 0.5),
+    0 0 60px rgba(120, 220, 232, 0.3),
+    inset 0 0 30px rgba(120, 220, 232, 0.1) !important;
+}
+
+/* Input controls */
+.rete-control input {
+  background: rgba(10, 10, 15, 0.8) !important;
+  border: 1px solid rgba(120, 220, 232, 0.3) !important;
+  color: #78dce8 !important;
+  font-family: 'Orbitron', sans-serif !important;
+  padding: 8px 12px !important;
+  border-radius: 6px !important;
+  box-shadow: inset 0 0 10px rgba(120, 220, 232, 0.1) !important;
+  transition: all 0.3s ease !important;
+}
+
+.rete-control input:focus {
+  outline: none !important;
+  border-color: rgba(120, 220, 232, 0.6) !important;
+  box-shadow:
+    inset 0 0 15px rgba(120, 220, 232, 0.2),
+    0 0 10px rgba(120, 220, 232, 0.3) !important;
+}
+
+/* Sockets (connection ports) */
+.rete-socket {
+  background: rgba(10, 10, 15, 0.8) !important;
+  border: 2px solid rgba(120, 220, 232, 0.6) !important;
+  box-shadow:
+    0 0 10px rgba(120, 220, 232, 0.4),
+    inset 0 0 10px rgba(120, 220, 232, 0.2) !important;
+  transition: all 0.3s ease !important;
+  animation: pulse 2s ease-in-out infinite !important;
+}
+
+.rete-socket:hover {
+  background: rgba(120, 220, 232, 0.3) !important;
+  box-shadow:
+    0 0 20px rgba(120, 220, 232, 0.6),
+    inset 0 0 15px rgba(120, 220, 232, 0.3) !important;
+  transform: scale(1.2) !important;
+}
+
+/* Connection wires */
+.rete-connection path {
+  stroke: #78dce8 !important;
+  stroke-width: 3px !important;
+  filter: drop-shadow(0 0 8px rgba(120, 220, 232, 0.6)) !important;
+  transition: all 0.3s ease !important;
+}
+
+.rete-connection:hover path {
+  stroke: #a1e4ff !important;
+  stroke-width: 4px !important;
+  filter: drop-shadow(0 0 12px rgba(161, 228, 255, 0.8)) !important;
+}
+
+/* Pulsing animation for sockets */
+@keyframes pulse {
+  0%, 100% {
+    box-shadow:
+      0 0 10px rgba(120, 220, 232, 0.4),
+      inset 0 0 10px rgba(120, 220, 232, 0.2);
+  }
+  50% {
+    box-shadow:
+      0 0 20px rgba(120, 220, 232, 0.6),
+      inset 0 0 15px rgba(120, 220, 232, 0.3);
+  }
+}
+
+/* Grid overlay effect */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image:
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 49px,
+      rgba(120, 220, 232, 0.03) 49px,
+      rgba(120, 220, 232, 0.03) 50px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 49px,
+      rgba(120, 220, 232, 0.03) 49px,
+      rgba(120, 220, 232, 0.03) 50px
+    );
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Ensure canvas stays behind grid */
+canvas {
+  position: relative;
+  z-index: 0;
+}
+
+/* Input/Output labels */
+.rete-input-title,
+.rete-output-title {
+  color: rgba(120, 220, 232, 0.9) !important;
+  font-family: 'Orbitron', sans-serif !important;
+  font-size: 11px !important;
+  letter-spacing: 0.5px !important;
+  text-shadow: 0 0 5px rgba(120, 220, 232, 0.3) !important;
+}
+
+/* Control labels */
+.rete-control-title {
+  color: rgba(120, 220, 232, 0.7) !important;
+  font-family: 'Orbitron', sans-serif !important;
+  font-size: 10px !important;
+  text-transform: uppercase !important;
+  letter-spacing: 1px !important;
+}
+
+/* Scene Selector */
+.scene-selector {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1000;
+  background: rgba(10, 10, 15, 0.95);
+  border: 2px solid rgba(120, 220, 232, 0.3);
+  border-radius: 12px;
+  padding: 15px;
+  box-shadow:
+    0 0 20px rgba(120, 220, 232, 0.3),
+    0 0 40px rgba(120, 220, 232, 0.1),
+    inset 0 0 20px rgba(120, 220, 232, 0.05);
+  backdrop-filter: blur(10px);
+}
+
+.scene-title {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  color: #78dce8;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 12px;
+  text-align: center;
+  text-shadow: 0 0 10px rgba(120, 220, 232, 0.5);
+}
+
+.scene-btn {
+  display: block;
+  width: 100%;
+  margin: 8px 0;
+  padding: 12px 16px;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  color: rgba(120, 220, 232, 0.8);
+  background: rgba(10, 10, 15, 0.8);
+  border: 1px solid rgba(120, 220, 232, 0.3);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: left;
+  letter-spacing: 0.5px;
+  box-shadow: inset 0 0 10px rgba(120, 220, 232, 0.05);
+}
+
+.scene-btn:hover {
+  color: #78dce8;
+  border-color: rgba(120, 220, 232, 0.6);
+  background: rgba(120, 220, 232, 0.1);
+  box-shadow:
+    0 0 15px rgba(120, 220, 232, 0.3),
+    inset 0 0 15px rgba(120, 220, 232, 0.1);
+  transform: translateX(-2px);
+}
+
+.scene-btn.active {
+  color: #a1e4ff;
+  border-color: rgba(120, 220, 232, 0.8);
+  background: rgba(120, 220, 232, 0.15);
+  box-shadow:
+    0 0 20px rgba(120, 220, 232, 0.4),
+    inset 0 0 20px rgba(120, 220, 232, 0.15);
+  font-weight: 700;
+}
+
+.scene-btn:active {
+  transform: translateX(-2px) scale(0.98);
+}

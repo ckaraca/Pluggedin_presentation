@@ -1,0 +1,44 @@
+{
+  "name": "retejs-v2-3d",
+  "version": "1.0.0",
+  "description": null,
+  "keywords": [
+    "rete.js 2",
+    "rete.js"
+  ],
+  "main": "src/index.tsx",
+  "dependencies": {
+    "@types/three": "0.152.0",
+    "react": "18.0.0",
+    "react-dom": "18.0.0",
+    "react-scripts": "5.0.1",
+    "rete": "2.0.1",
+    "rete-area-3d-plugin": "2.0.0",
+    "rete-area-plugin": "2.0.0",
+    "rete-connection-plugin": "2.0.0",
+    "rete-context-menu-plugin": "2.0.0",
+    "rete-engine": "2.0.0",
+    "rete-react-plugin": "2.0.1",
+    "rete-render-utils": "2.0.1",
+    "styled-components": "5.3.6",
+    "three": "0.152.2"
+  },
+  "devDependencies": {
+    "@types/react": "18.0.25",
+    "@types/react-dom": "18.0.9",
+    "eslint": "^8.0.0",
+    "typescript": "5.9.3"
+  },
+  "scripts": {
+    "start": "TSC_COMPILE_ON_ERROR=true react-scripts start",
+    "build": "TSC_COMPILE_ON_ERROR=true react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
+}
