@@ -89,6 +89,33 @@ body {
     inset 0 0 30px rgba(120, 220, 232, 0.1) !important;
 }
 
+/* Document nodes - Paper/Yellow with subtle glow */
+.rete-node:has(.rete-node-title:contains("Document")) {
+  border-color: rgba(251, 191, 36, 0.4) !important;
+  box-shadow:
+    0 0 20px rgba(251, 191, 36, 0.3),
+    0 0 40px rgba(251, 191, 36, 0.1),
+    inset 0 0 20px rgba(251, 191, 36, 0.05) !important;
+}
+
+/* Native Tool nodes - Orange */
+.rete-node:has(.rete-node-title:contains("Native Tool")) {
+  border-color: rgba(249, 115, 22, 0.4) !important;
+  box-shadow:
+    0 0 20px rgba(249, 115, 22, 0.3),
+    0 0 40px rgba(249, 115, 22, 0.1),
+    inset 0 0 20px rgba(249, 115, 22, 0.05) !important;
+}
+
+/* LM Studio model - Green/Purple gradient */
+.rete-node:has(.rete-node-title:contains("LM Studio")) {
+  border-color: rgba(34, 197, 94, 0.4) !important;
+  box-shadow:
+    0 0 20px rgba(34, 197, 94, 0.3),
+    0 0 40px rgba(168, 85, 247, 0.2),
+    inset 0 0 20px rgba(34, 197, 94, 0.05) !important;
+}
+
 /* Input controls */
 .rete-control input {
   background: rgba(10, 10, 15, 0.8) !important;
